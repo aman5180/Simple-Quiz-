@@ -1,5 +1,4 @@
-const li_style =
-  "border-b mb-1 mx-3 py-1 hover:text-white hover:border-white px-2";
+const li_style = "border-b mb-1 mx-3 py-1 hover:text-white border-[#9ab] px-2";
 document.addEventListener("DOMContentLoaded", () => {
   let startBtn = document.getElementById("start-btn");
   let openingPage = document.getElementById("opening-page");
@@ -82,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       optionsList.appendChild(new_li);
       new_li.addEventListener("click", () => {
         removeSelectedFromAll();
-        new_li.classList.add("text-white", "border-white");
+        new_li.classList.add("text-white");
         selectedOption = option;
         nextBtn.classList.remove("hidden");
       });
@@ -92,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function removeSelectedFromAll() {
     optionsList.querySelectorAll("li").forEach((li) => {
       li.classList.remove("text-white");
-      li.classList.remove("border-white");
     });
   }
 
