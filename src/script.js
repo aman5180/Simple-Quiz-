@@ -28,6 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
       options: ["Pokhra", "Kurseong", "Hunza", "Thimpu"],
       answer: "Thimpu",
     },
+    {
+      question: "What is the capital of Colombia?",
+      options: ["Lima", "Medellin", "Cali", "Bogota"],
+      answer: "Bogota",
+    },
+    {
+      question: "What is the capital of Burkina Faso?",
+      options: ["Ouagadougou", "Abidjan", "Dae es Salaam", "Kinshasa"],
+      answer: "Ouagadougou",
+    },
   ];
 
   let index = 0;
@@ -72,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       optionsList.appendChild(new_li);
       new_li.addEventListener("click", () => {
         removeSelectedFromAll();
-        new_li.classList.add("text-white", "border-white", "border", "rounded");
+        new_li.classList.add("text-white", "border-white");
         selectedOption = option;
         nextBtn.classList.remove("hidden");
       });
@@ -83,8 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     optionsList.querySelectorAll("li").forEach((li) => {
       li.classList.remove("text-white");
       li.classList.remove("border-white");
-      li.classList.remove("border");
-      li.classList.remove("rounded");
     });
   }
 
