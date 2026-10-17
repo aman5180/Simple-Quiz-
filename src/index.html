@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Quiz</title>
+  </head>
+  <body
+    class="bg-[#14181c] min-h-screen flex justify-center items-center text-[#9ab]"
+  >
+    <div class="p-4">
+      <div id="opening-page" class="text-center">
+        <h2 class="font-bold text-2xl mb-4">QUIZ</h2>
+        <button
+          id="start-btn"
+          class="bg-[#00e054] text-white px-2 rounded font-bold hover:bg-[#00c046] cursor-pointer duration-300"
+        >
+          START
+        </button>
+      </div>
+      <div id="questions-page" class="hidden">
+        <p id="question-text" class="font-semibold mb-2 text-lg">
+          <!-- What is the capital of France? -->
+        </p>
+        <ul id="options-list" class="list-inside mb-6">
+          <!-- <li
+            class="border-b mb-1 mx-3 py-1 hover:text-white hover:border-white"
+          >
+            Paris
+          </li>
+          <li
+            class="border-b mb-1 mx-3 py-1 hover:text-white hover:border-white"
+          >
+            Amsterdam
+          </li>
+          <li
+            class="border-b mb-1 mx-3 py-1 hover:text-white hover:border-white"
+          >
+            Bucharest
+          </li>
+          <li
+            class="border-b mb-1 mx-3 py-1 hover:text-white hover:border-white"
+          >
+            Bratislava
+          </li> -->
+        </ul>
+        <div class="flex justify-center">
+          <button
+            id="next-btn"
+            class="bg-[#00e054] text-white px-2 rounded font-bold hover:bg-[#00c046] cursor-pointer duration-300"
+          >
+            NEXT
+          </button>
+        </div>
+      </div>
+      <div id="results-page" class="text-center hidden">
+        <h2 class="font-bold text-2xl mb-4">RESULTS</h2>
+        <p class="font-semibold mb-5 text-lg">
+          You scored <span id="score-display">2</span> out of
+          <span id="total-display">3</span>
+        </p>
+        <button
+          id="restart-btn"
+          class="bg-[#00e054] text-white px-2 rounded font-bold hover:bg-[#00c046] cursor-pointer duration-300"
+        >
+          RESTART
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
