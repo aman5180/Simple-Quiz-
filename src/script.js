@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let selectedOption = null;
 
-  let score = 0;
+  // let score = 0;
 
   startBtn.addEventListener("click", () => {
     openingPage.classList.add("hidden");
@@ -61,9 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   nextBtn.addEventListener("click", () => {
-    if (selectedOption === questions[index]["answer"]) {
-      score++;
-    }
+    questions[index]['selected']=selectedOption;
+    selectedOption=null;
+    // if (selectedOption === questions[index]["answer"]) {
+    //   score++;
+    // }
     index++;
     if (index < maxLength) {
       renderQuestion();
@@ -71,10 +73,27 @@ document.addEventListener("DOMContentLoaded", () => {
       openingPage.classList.add("hidden");
       questionsPage.classList.add("hidden");
       resultsPage.classList.remove("hidden");
+      let score=calculateScore();
       scoreDisplay.textContent = score;
       totalDisplay.textContent = maxLength;
     }
   });
+
+  function calculateScore(){
+    let ans=0
+    for(let que of questions){
+      if(que['selected']===que['answer']){
+        ans++;
+      }
+    }
+    return ans;
+  }
+
+  prevBtn.addEventListener('click',()=>{
+    index--;
+    questions[index]['selected']=null;
+    renderQuestion();
+  })
 
   function renderQuestion() {
     if(index<1){
@@ -107,7 +126,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   restartBtn.addEventListener("click", () => {
-    score = 0;
+    for(let i=0;i<maxLength;i++){
+      questions[i]['selected']=null;
+    }
     index = 0;
     openingPage.classList.remove("hidden");
     questionsPage.classList.add("hidden");
